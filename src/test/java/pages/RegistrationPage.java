@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.componets.CalendarComponent;
+import pages.componets.TableResults;
 
 import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
@@ -27,6 +28,8 @@ public class RegistrationPage {
                             submitInput = $("#submit");
 
     private final CalendarComponent calendarComponent = new CalendarComponent();
+    private final TableResults checkTableResults = new TableResults();
+    private final TableResults unsuccessfulRegistration = new TableResults();
 
     public RegistrationPage openPage(){
         open("/automation-practice-form");
@@ -98,13 +101,12 @@ public class RegistrationPage {
     }
 
     public RegistrationPage checkResult(String key, String value) {
-        $(".table-responsive").$(byText(key)).parent()
-                .shouldHave(text(value));
+        checkTableResults.checkTableResults(key, value);
         return this;
     }
 
     public void unsuccessfulRegistration() {
-        $(".modal-content").shouldNotBe(exist);
+        unsuccessfulRegistration.unsuccessfulRegistration();
     }
 
     public void clickSubmit() {
