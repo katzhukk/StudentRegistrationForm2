@@ -4,7 +4,6 @@ import com.codeborne.selenide.SelenideElement;
 import pages.componets.CalendarComponent;
 import pages.componets.TableResults;
 
-import static com.codeborne.selenide.Condition.exist;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;

@@ -10,6 +10,11 @@ public class TableResults {
         $(".table-responsive").$(byText(key)).parent()
                 .shouldHave(text(value));
         return this;
+
+    }    public TableResults checkBoxResults(String key, String value){
+        $("#output").$(byText(key)).parent()
+                .shouldHave(text(value));
+        return this;
     }
 
     public void unsuccessfulRegistration(){
