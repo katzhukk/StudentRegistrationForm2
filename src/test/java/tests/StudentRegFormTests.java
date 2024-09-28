@@ -51,4 +51,27 @@ public class StudentRegFormTests extends TestBase{
                 .checkResult("Address", currentAddress)
                 .checkResult("State and City", state + " " + city);
     }
+
+    @Test
+    void SubmitRegistrationTest() {
+        registrationPage.openPage() /*Открытие сайта регистрации*/
+                /*Заполнение формы студента:*/
+                .clickSubmit();
+
+        /*Проверка результатов*/
+        registrationPage.unsuccessfulRegistration();
+    }
+
+    @Test
+    void unsuccessfulRegistrationTest() {
+        registrationPage.openPage() /*Открытие сайта регистрации*/
+                /*Заполнение формы студента:*/
+                .setFirstName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(userEmail)
+                .clickSubmit();
+
+        /*Проверка результатов*/
+        registrationPage.unsuccessfulRegistration();
+    }
 }

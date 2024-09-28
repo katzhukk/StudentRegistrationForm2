@@ -12,7 +12,7 @@ public class TestBase {
         Configuration.browserSize = "1920x1080";        /* Задаем разрешение браузера */
         Configuration.baseUrl = "https://demoqa.com";   /* Открывает основную страницу сайта */
         Configuration.pageLoadStrategy = "eager";       /* Не ждем, когда загрузится полностью страница, чтобы долго не ждать*/
-        Configuration.holdBrowserOpen = true;         /* Не дает закрыть тесту браузер. Нужно только для отладки */
+        //Configuration.holdBrowserOpen = true;         /* Не дает закрыть тесту браузер. Нужно только для отладки */
     }
 
     @AfterAll
