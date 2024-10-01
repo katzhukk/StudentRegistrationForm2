@@ -15,7 +15,7 @@ public class TestBase {
     }
 
     @AfterEach
-    void closeWebDriver() {/* Всегда пишется со static. Вызывается один после всеми тестов в этом тестовом классе*/
+    void closeWebDriver() {
         WebDriverRunner.closeWebDriver();
     }
 }
